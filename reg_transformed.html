@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+	<head>
+		<!-- Text from Wikipedia -->
+		<!-- Photo from Wikipedia via http://en.wikipedia.org/wiki/Colour_wheel -->
+		<!-- Paper background via http://web-backgrounds.net/paper-backgrounds/6-tileable-paper-patterns/ -->
+		<meta charset="utf-8"/>
+		<script>
+		var expanded = false;
+		function zoomElement(ev) {
+			if (expanded) {
+				ev.target.classList.toggle('bigger');
+			}
+		}
+		function onButtonClick() {
+			expanded = !expanded;
+			var panels = document.querySelectorAll('div.panel');
+			for (var i = 0; i < panels.length; i++) {
+				panels[i].classList.toggle('initial');
+				if (i == panels.length - 1) {
+					panels[i].classList.toggle('gone');
+				}
+				panels[i].addEventListener('click', zoomElement)
+			}
+		}
+		
+		window.onload = function () {
+			document.getElementById('button').addEventListener('click', onButtonClick);
+			document.getElementById('more').addEventListener('click', onButtonClick);
+		};
+		</script>
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'/>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300italic,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<style>
+		html {
+			height: 100%;
+		}
+		body {
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 5em;
+			position: relative;
+			width: 75%;
+			height: 50em;
+			font-family: 'Open Sans Condensed', sans-serif;
+		}
+		
+		h1, h2 {
+			font-family: 'Yanone Kaffeesatz', sans-serif;
+			font-variant: small-caps;
+			text-align: center;
+			margin: 0;
+		}
+		
+		h2 {
+			cursor: pointer;
+			text-decoration: underline;
+			margin: 0em 1em;
+		}
+		
+		p {
+			text-align: left;
+			margin: 0em 1em;
+		}
+		
+		h1, h2, p {
+			-webkit-flow-into: colors;
+			text-shadow: white -4px 0px 5px, white 4px 0px 5px, white 0px -4px 5px, white 0px 4px 5px;
+			text-indent: 0;
+		}
+		p.last {
+			-webkit-region-break-after: always;
+		}
+		
+		.panel {
+			-webkit-flow-from: colors;
+			display: block;
+			background-color: silver;
+			border: 2px solid black;
+			border-bottom: 1em solid black;
+			width: 10em;
+			height: 20em;
+			float: left;
+			position: absolute;
+			top: 0;
+			left: 0;
+			-webkit-transform-origin-x: center;
+			-webkit-transform-origin-y: 31em;
+			-webkit-transition-property: -webkit-transform, opacity;
+			-webkit-transition-duration: 0.5s;
+			-webkit-transition-timing-function: ease-in;
+		}
+		
+		.one {
+			-webkit-transform: rotate(0deg);
+			background-color: red;
+		}
+		.two {
+			-webkit-transform: rotate(51.428deg);
+			background-color: orange;
+		}
+		.three {
+			-webkit-transform: rotate(102.857deg);
+			background-color: yellow;
+		}
+		.four {
+			-webkit-transform: rotate(154.285deg);
+			background-color: green;
+		}
+		.five {
+			-webkit-transform: rotate(205.714deg);
+			background-color: blue;
+		}
+		.six {
+			-webkit-transform: rotate(257.142deg);
+			background-color: indigo;
+		}
+		.seven {
+			-webkit-transform: rotate(308.571deg);
+			background-color: violet;
+		}
+		
+		.initial {
+			-webkit-transform: rotate(0deg);
+		}
+		.cover {
+			-webkit-transform: rotate(360deg);
+			background-color: darkgray;
+		}
+		.gone {
+			-webkit-transform: translate(10em, -40em) rotate(30deg);
+			opacity: 0;
+		}
+		.bigger {
+			-webkit-transform: rotate(0deg) translate(0em, 25em) scale(1.5);
+			z-index: 100;
+		}
+		</style>
+	</head>
+	<body>
+		<button id='button'>Click</button>
+		<h1>Red</h1>
+		<p class='last'>Symbol of guilt, sin, passion and anger. Also used as a symbol of courage and sacrifice.<br/>
+		Used to indicate danger and emergency. Most communists movement were associated with this color.<br/>
+		In <em>yoga</em> it symbolizes the <strong>root</strong> chakra.</p>
+		<h1>Orange</h1>
+		<p class='last'>The national color of the Netherlands. Also the most sacred color in Hinduism.<br/>
+		Associated with joy and sunshine; represents enthusiasm, creativity, success. <br/>
+		In <em>yoga</em> it symbolizes the <strong>spleen</strong> chakra.</p>
+		<h1>Yellow</h1>
+		<p class='last'>Commonly associated with jaundice and cowardice, it can also symbolize friendship, while in heraldry it's the color of honour and loyalty. In politics, usually associated with liberal parties.<br/>
+		In <em>yoga</em> it symbolizes the <strong>solar plexus</strong> chakra.</p>
+		<h1>Green</h1>
+		<p class='last'>Traditional symbol for nature and life, it is also associated with death, sickness and decay.<br/>
+		It's also the traditional color of Islam. In politics, usually associated with nationalist parties.<br/>
+		In <em>yoga</em> it symbolizes the <strong>heart</strong> chakra.</p>
+		<h1>Blue</h1>
+		<p class='last'>Often associated with depth and stability, symbolizes wisdon, intelligence and faith, among others. Commonly used to symbolize the male gender.<br/>
+		In <em>yoga</em> it symbolizes the <strong>throat</strong> chakra.</p>
+		<h1>Indigo</h1>
+		<p class='last'>Bordering between blue and violet, it is a symbol of spiritual realization, solitude and inner communication.<br/>
+		It is said to deepen depression, because of it's inward focus.<br/>
+		In <em>yoga</em> it symbolizes the <strong>brow</strong> chakra.</p>
+		<h1>Violet</h1>
+		<p class='last'>Symbol of luxury, royalty and majesty, it also symbolizes harmony in Chinese culture. Often associated with independence and magic.<br/>
+		In <em>yoga</em> it symbolizes the <strong>crown</strong> chakra.</p>
+		<h1>Colors and meanings</h1>
+		<p>A short summary of the meanings and symbols of colours.</p>
+		<h2 id='more'>Click here to see more</h2>
+		<div style='position: relative; left: 25em; width: 50em; height: 50em;'>
+			<div class="panel one initial"></div>
+			<div class="panel two initial"></div>
+			<div class="panel three initial" id='thr'></div>
+			<div class="panel four initial"></div>
+			<div class="panel five initial"></div>
+			<div class="panel six initial"></div>
+			<div class="panel seven initial"></div>
+			<div class="panel initial cover"></div>
+		</div>
+	</body>
+</html>

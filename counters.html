@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>Run-in test</title>
+	<style>
+	ol {
+		counter-reset: item;
+		list-style-type: none;
+		direction: rtl;
+	}
+	
+	li:before {
+		content: counter(item) ". ";
+		counter-increment: item;
+	}
+	</style>
+</head>
+<body>
+	<ol>
+		<li>Unu</li>
+		<li>Doi</li>
+		<li>Trei</li>
+		<ol>
+			<li>Ah</li>
+			<li>Bâh</li>
+			<li>Câh</li>
+		</ol>
+	</ol>
+</body>
+</html>

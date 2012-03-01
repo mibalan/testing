@@ -1,0 +1,11 @@
+Issues with regions:
+	* @regions not working (not implemented?)
+	* regions pseudo-elements (::before, ::after) not working (not implemented?)
+	* region-break-(after|before): avoid does not seem to work (at least not the way I expect it to)
+	* -webkit-region-overflow in CSS vs. webkitRegionOverflow
+		[TSK sent mail]
+
+Conceptual issues:
+	* why regions that have top & bottom / left & right specified don't work if there's no width / height given? (it's really difficult to get a nice flexible layout when you have to know in advance the dimensions of the boxes for the regions)
+		- [FIXED] That's what CSS flex-box is about
+		- would it be OK to have the regions inside another container that's positioned as above? (looks messy but should get the job done)

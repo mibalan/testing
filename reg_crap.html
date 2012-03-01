@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		
+	<style>
+	body {
+		counter-reset: pars;
+	}
+	p {
+		-webkit-flow-into: n1;
+		counter-increment: pars;
+	}
+	
+	p:before {
+		font-weight: bold;
+		content: 'Par. ' counter(pars) ' ';
+	}
+    #div_1 {
+		-webkit-flow-from: n1;
+        border: thick solid blue;
+		width: 100px;
+		height: 100px;
+		position: relative;
+    }
+	#div_1:after {
+		content: 'FiBooo';
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background-color: cyan;
+		border: 1px dashed black;
+	}
+        
+</style>
+	</head>
+	<body>
+	<p>Iama daba gooooooo!</p>
+	<div id="div_1">Foo</div>
+	</body>
+</html>
