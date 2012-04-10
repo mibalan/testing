@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+	<title>CSS Regions and transforms</title>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic|Russo+One' rel='stylesheet' type='text/css'/>
+	<style type="text/css">
+	body {
+		width: 100%;
+		height: 100%;
+	}
+	#shuffle {
+		position: absolute;
+		display: block;
+		width: 64px;
+		height: 64px;
+		top: 24px;
+		left: 24px;
+		z-index: 1000;
+	}
+	#shuffle>img {
+		display: block;
+	}
+
+	article {
+		-webkit-flow-into: article;
+	}
+	article p, article ul {
+		font-family: 'Ubuntu', sans-serif;
+	}
+
+	article h1, article h2, article h3 {
+		font-family: 'Russo One', cursive;
+	}
+
+	.left-image {
+		float: left;
+		margin: 1em;
+		max-width: 50%;
+		max-height: 75%;
+	}
+
+	.region-container {
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+		height: 90%;
+	}
+	.region {
+		-webkit-flow-from: article;
+		-webkit-transition-property: left, top, height, width;
+		-webkit-transition-function: ease-out;
+		-webkit-transition-duration: 1s;
+		width: 40%;
+		height: 40%;
+		border: medium solid #BABDB6;
+		position: absolute;
+		padding: .5em;
+
+		background-position: 98% 98%;
+		background-repeat: no-repeat;
+	}
+	#region-1 {
+		top: 5%;
+		left: 5%;
+		background-image: url('img/bg_1.png');
+	}
+	#region-2 {
+		top: 55%;
+		left: 5%;
+		background-image: url('img/bg_2.png');
+	}
+	#region-3 {
+		top: 5%;
+		left: 55%;
+		background-image: url('img/bg_3.png');
+	}
+	#region-4 {
+		top: 55%;
+		left: 55%;
+		background-image: url('img/bg_4.png');
+	}
+	.last-region {
+		-webkit-region-overflow: break;
+		overflow: hidden;
+	}
+	</style>
+	<script type="text/javascript">
+	var crtLayout = 0;
+	var layouts = [
+			[
+				{id: "region-1", top: "5%", left: "5%", width: "40%", height: "40%"},
+				{id: "region-2", top: "55%", left: "5%", width: "40%", height: "40%"},
+				{id: "region-3", top: "5%", left: "55%", width: "40%", height: "40%"},
+				{id: "region-4", top: "55%", left: "55%", width: "40%", height: "40%"},
+			],
+			[
+				{id: "region-1", top: "5%", left: "5%", width: "40%", height: "90%"},
+				{id: "region-2", top: "5%", left: "50%", width: "45%", height: "20%"},
+				{id: "region-3", top: "30%", left: "50%", width: "45%", height: "40%"},
+				{id: "region-4", top: "75%", left: "50%", width: "45%", height: "20%"},
+			],
+			[
+				{id: "region-1", top: "5%", left: "5%", width: "30%", height: "40%"},
+				{id: "region-2", top: "5%", left: "40%", width: "20%", height: "40%"},
+				{id: "region-3", top: "5%", left: "65%", width: "30%", height: "40%"},
+				{id: "region-4", top: "50%", left: "5%", width: "90%", height: "45%"},
+			]
+		];
+	function toggleLayout() {
+		crtLayout++;
+		if (crtLayout >= layouts.length) {
+			crtLayout = 0;
+		}
+		for (var i = 0; i < layouts[crtLayout].length; i++) {
+			var elemStyle = layouts[crtLayout][i];
+			var elem = document.getElementById(elemStyle.id);
+			elem.style.top = elemStyle.top;
+			elem.style.left = elemStyle.left;
+			elem.style.width = elemStyle.width;
+			elem.style.height = elemStyle.height;
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', function() {
+		var shuffleButton = document.getElementById('shuffle');
+		shuffleButton.addEventListener('click', function(e) {
+			toggleLayout();
+			return false;
+		});
+	});
+	</script>
+</head>
+<body>
+	<a href="#" id="shuffle"><img src="img/shuffle.png" alt=""/></a>
+	<article>
+		<h1>Filler text on the web</h1>
+		<h2>Why use it?</h2>
+		<!-- <img src="img/fi-ligature.jpg" class="left-image" alt=""> -->
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue velit, fringilla eu laoreet vel, blandit eu odio. Nam quis libero vel nibh viverra lacinia et hendrerit nibh. Donec orci ante, tristique quis vestibulum eu, varius nec tellus. Ut id mi turpis. Proin sed risus sed neque vehicula imperdiet. Nunc lacus orci, consequat id faucibus ac, hendrerit ut eros. Mauris a dui non dolor ullamcorper molestie. Donec pulvinar diam sit amet mauris egestas dictum. Nunc vel mattis lorem. Cras elementum, libero at consequat lacinia, magna purus consequat elit, vitae eleifend arcu eros ac mi. Etiam eu nibh et ante tristique condimentum non id velit. Integer ipsum lectus, viverra eget tempus vel, placerat ac purus. Integer ac enim quis libero adipiscing varius nec at nunc.</p>
+		<h2>Where does it come from?</h2>
+		<p>Donec iaculis, ipsum id molestie eleifend, lectus mauris condimentum ligula, et dictum lacus arcu et elit. Sed sagittis nisi id quam mattis in pellentesque felis pretium. Sed id urna diam. Pellentesque aliquet lorem a neque lacinia eu condimentum urna fermentum. Fusce eget elit et lacus rutrum faucibus non a sem. Praesent eu tortor non dui adipiscing ultricies viverra non mi. Sed non ante nec augue auctor blandit. Nunc cursus interdum scelerisque. Pellentesque id leo a elit molestie pellentesque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque pharetra sem et ipsum pellentesque sed gravida elit adipiscing. In elementum porttitor placerat. Aenean eget arcu aliquam turpis commodo eleifend non eu dolor.</p>
+		<h3>Variations</h3>
+		<p>Praesent vehicula, dolor a malesuada auctor, nisi enim molestie nulla, eget imperdiet erat dolor ac eros. Maecenas dictum pellentesque eleifend. Sed elit dui, ornare ac sagittis non, congue et ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie consectetur metus at rhoncus. Suspendisse potenti. Mauris porttitor, purus vel luctus pellentesque, ligula dolor elementum neque, eget viverra magna mi sed massa. Fusce viverra lobortis porttitor. Integer imperdiet tellus vel neque pretium rutrum. In hac habitasse platea dictumst. Aliquam nec mollis nisl.</p>
+		<p>Aenean auctor metus vel nisl viverra dictum. Aliquam vitae mauris sit amet ipsum imperdiet eleifend. Morbi in enim eget arcu molestie eleifend. Quisque vel lacinia tellus. Suspendisse potenti. Duis tellus tellus, aliquam ac lacinia in, tincidunt a risus. Vestibulum malesuada feugiat nibh in hendrerit. Aliquam commodo suscipit placerat. Quisque felis nunc, fermentum at porta eget, dignissim varius arcu. Integer ut nunc ipsum.</p>
+
+		<p>Suspendisse eu urna at urna interdum mattis. Suspendisse consequat neque sit amet enim egestas luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nec ante eget purus luctus ultricies. Nunc et risus lobortis ante mattis bibendum ut sed purus. Nam mi nunc, cursus sit amet dapibus quis, sodales sit amet enim.</p>
+		<h2>Attributions</h2>
+		<p>
+			<ul>
+				<li>Text created via <a href="http://www.lipsum.com/">www.lipsum.com</a></li>
+				<li><strong>Ubuntu</strong> and <strong>Changa One</strong> fonts via <a href="http://www.google.com/webfonts">Google WebFonts</a></li>
+			</ul>
+		</p>
+	</article>
+	<div class='region-container'>
+		<div class="region" id="region-1"></div>
+		<div class="region" id="region-2"></div>
+		<div class="region" id="region-3"></div>
+		<div class="region last-region" id="region-4"></div>
+	</div>
+</body>
+</html>
