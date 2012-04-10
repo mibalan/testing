@@ -7,7 +7,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="744.09448819"
@@ -21,21 +20,6 @@
    inkscape:export-ydpi="31.77">
   <defs
      id="defs4">
-    <linearGradient
-       id="linearGradient3790">
-      <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0"
-         id="stop3792" />
-      <stop
-         id="stop3798"
-         offset="0.5"
-         style="stop-color:#87a9d3;stop-opacity:1;" />
-      <stop
-         style="stop-color:#3465a4;stop-opacity:1;"
-         offset="1"
-         id="stop3794" />
-    </linearGradient>
     <marker
        inkscape:stockid="TriangleOutS"
        orient="auto"
@@ -75,16 +59,6 @@
          style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
          transform="scale(0.2) rotate(180) translate(6,0)" />
     </marker>
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3790"
-       id="radialGradient3796"
-       cx="221.99489"
-       cy="3.2911186"
-       fx="221.99489"
-       fy="3.2911186"
-       r="97.451908"
-       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -93,16 +67,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="246.48361"
-     inkscape:cy="951.99158"
+     inkscape:zoom="5.6"
+     inkscape:cx="133.78565"
+     inkscape:cy="946.36804"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1555"
-     inkscape:window-height="927"
-     inkscape:window-x="93"
-     inkscape:window-y="2"
+     inkscape:window-width="1190"
+     inkscape:window-height="904"
+     inkscape:window-x="341"
+     inkscape:window-y="15"
      inkscape:window-maximized="0"
      showguides="true"
      inkscape:guide-bbox="true">
@@ -118,7 +92,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -177,36 +151,5 @@
            sodipodi:nodetypes="cccc" />
       </g>
     </g>
-    <path
-       sodipodi:type="star"
-       style="fill:url(#radialGradient3796);fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path2998"
-       sodipodi:sides="12"
-       sodipodi:cx="265"
-       sodipodi:cy="42.362183"
-       sodipodi:r1="99.247169"
-       sodipodi:r2="83.216583"
-       sodipodi:arg1="0.7140907"
-       sodipodi:arg2="0.97589009"
-       inkscape:flatsided="false"
-       inkscape:rounded="0"
-       inkscape:randomized="0"
-       d="m 340,107.36218 -28.36284,3.92006 -14.18525,24.8716 -26.52297,-10.78655 -24.72059,14.4468 L 228.63206,117.21118 200,117.36219 196.07994,88.999344 171.20835,74.814089 181.9949,48.291119 167.54809,23.570531 190.151,5.9942393 190,-22.63782 l 28.36284,-3.920059 14.18525,-24.871593 26.52297,10.78655 24.72059,-14.446804 17.57629,22.602911 L 330,-32.63782 333.92006,-4.274979 358.79165,9.9102764 348.0051,36.433247 362.45191,61.153835 339.849,78.730126 z"
-       inkscape:transform-center-x="6.9436839"
-       inkscape:transform-center-y="-2.6273276"
-       transform="translate(28.005105,59.071064)" />
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;font-family:Sans;stroke-opacity:1;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
-       x="158.98521"
-       y="235.76762"
-       id="text3786"
-       sodipodi:linespacing="125%"
-       transform="matrix(0.91485136,-0.40379077,0.40379077,0.91485136,0,0)"><tspan
-         sodipodi:role="line"
-         id="tspan3788"
-         x="158.98521"
-         y="235.76762"
-         style="font-size:72px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;font-family:Bauhaus 93;-inkscape-font-specification:'Bauhaus 93,';stroke:#000000;stroke-opacity:1;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none">Mix!</tspan></text>
   </g>
 </svg>
