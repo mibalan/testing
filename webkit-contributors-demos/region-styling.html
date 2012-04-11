@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+	<title>CSS Regions styling</title>
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() {
+		var shuffleButton = document.getElementById('shuffle');
+		shuffleButton.addEventListener('click', function(e) {
+			var regionsContainer = document.getElementById('regions-container');
+			regionsContainer.classList.toggle('non-visible');
+			var regions = regionsContainer.querySelectorAll('.region');
+			for (var i = 0; i < regions.length; i++) {
+				regions[i].classList.toggle('flow-from');
+			}
+
+			var article = document.querySelector('article');
+			article.classList.toggle('flow-to');
+		});
+	});
+	</script>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic|Russo+One' rel='stylesheet' type='text/css'/>
+	<style type="text/css">
+	body {
+		width: 100%;
+		height: 100%;
+		background-color: #C0C0C0;
+	}
+	#shuffle {
+		position: absolute;
+		display: block;
+		width: 64px;
+		height: 64px;
+		top: 12px;
+		left: 12px;
+		z-index: 1000;
+	}
+	#shuffle>img {
+		display: block;
+	}
+
+	article p {
+		padding-left: .5em;
+		padding-right: .5em;
+	}
+	article p, article ul {
+		font-family: 'Ubuntu', sans-serif;
+	}
+	article h1, article h2 {
+		font-family: 'Russo One', cursive;
+		font-weight: normal;
+		padding-left: 1em;
+	}
+
+	.article-image {
+		display: block;
+		position: relative;
+		width: 100%;
+		background-size: cover;
+		background: #FEFEFE url('img/fi-ligature.jpg') no-repeat scroll left center;
+	}
+	#regions-container {
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+		height: 90%;
+	}
+	.non-visible {
+		display: none;
+	}
+	.flow-to {
+		-webkit-flow-into: article;
+	}
+	.flow-from {
+		-webkit-flow-from: article;
+	}
+	
+	.region {
+		background-color: #DADADA;
+		position: absolute;
+		height: 90%;
+		top: 5%;
+		border: 1px solid silver;
+	}
+
+	@-webkit-region .left-region {
+		h1~p {
+			background-color: lightgreen;
+		}
+	}
+	@-webkit-region .right-region {
+		h2 {
+			background-color: #C0C0C0;
+		}
+	}
+	
+	.left-region {
+		width: 30%;
+		left: 10%;
+	}
+	.right-region {
+		width: 45%;
+		left: 45%;
+	}
+	.image-wrap {
+		text-align: center;
+		display: block;
+	}
+	.image-wrap>img {
+		width: 50%;
+		max-width: 35em;
+	}
+	</style>
+</head>
+<body>
+	<a href="#" id="shuffle"><img src="img/mix.png" alt=""/></a>
+	<article>
+		<h1>Filler text on the web</h1>
+		<span class='image-wrap'><img src='img/movable_type.jpg'/></span>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue velit, fringilla eu laoreet vel, blandit eu odio. Nam quis libero vel nibh viverra lacinia et hendrerit nibh. Donec orci ante, tristique quis vestibulum eu, varius nec tellus. Ut id mi turpis. Proin sed risus sed neque vehicula imperdiet.</p>
+		<p>Nunc lacus orci, consequat id faucibus ac, hendrerit ut eros. Mauris a dui non dolor ullamcorper molestie. Donec pulvinar diam sit amet mauris egestas dictum. Nunc vel mattis lorem.</p>
+		<h2>A little history</h2>
+		<p>Cras elementum, libero at consequat lacinia, magna purus consequat elit, vitae eleifend arcu eros ac mi. Etiam eu nibh et ante tristique condimentum non id velit. Integer ipsum lectus, viverra eget tempus vel, placerat ac purus. Integer ac enim quis libero adipiscing varius nec at nunc.</p>
+		<p>Donec iaculis, ipsum id molestie eleifend, lectus mauris condimentum ligula, et dictum lacus arcu et elit. Sed sagittis nisi id quam mattis in pellentesque felis pretium. Sed id urna diam. Pellentesque aliquet lorem a neque lacinia eu condimentum urna fermentum.</p>
+		<p>Fusce eget elit et lacus rutrum faucibus non a sem. Praesent eu tortor non dui adipiscing ultricies viverra non mi. Sed non ante nec augue auctor blandit. Nunc cursus interdum scelerisque. Pellentesque id leo a elit molestie pellentesque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque pharetra sem et ipsum pellentesque sed gravida elit adipiscing. In elementum porttitor placerat. Aenean eget arcu aliquam turpis commodo eleifend non eu dolor.</p>
+		<h2>Zaz</h2>
+		<p>Praesent vehicula, dolor a malesuada auctor, nisi enim molestie nulla, eget imperdiet erat dolor ac eros. Maecenas dictum pellentesque eleifend. Sed elit dui, ornare ac sagittis non, congue et ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie consectetur metus at rhoncus. Suspendisse potenti. Mauris porttitor, purus vel luctus pellentesque, ligula dolor elementum neque, eget viverra magna mi sed massa. Fusce viverra lobortis porttitor. Integer imperdiet tellus vel neque pretium rutrum. In hac habitasse platea dictumst. Aliquam nec mollis nisl</p>
+		<h2>Zang</h2>
+		<p>OOey</p>
+		<h2>Attributions</h2>
+		<p>
+			<ul>
+				<li>Image by <strong>Willi Heidelbach</strong> [GFDL, CC-BY-SA-3.0 or CC-BY-2.5] via Wikimedia Commons</li>
+				<li>Text created via <a href="http://www.lipsum.com/">www.lipsum.com</a></li>
+				<li><strong>Ubuntu</strong> and <strong>Changa One</strong> fonts via <a href="http://www.google.com/webfonts">Google WebFonts</a></li>
+			</ul>
+		</p>
+	</article>
+	<div id="regions-container" class='non-visible'>
+		<div class="region left-region"></div>
+		<div class="region right-region"></div>
+	</div>
+</body>
+</html>
